@@ -1,0 +1,11 @@
+---version: 0
+CREATE OR ALTER TABLE ${MY_DB}.${MY_SCHEMA}.PRODUCT(
+product_id NUMBER,
+product_name VARCHAR
+);
+
+---rollback:
+DROP TABLE IF EXISTS ${MY_DB}.${MY_SCHEMA}.PRODUCT;
+
+---verify:
+SELECT * FROM ${MY_DB}.${MY_SCHEMA}.PRODUCT LIMIT 1;

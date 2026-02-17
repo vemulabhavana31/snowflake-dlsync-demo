@@ -1,0 +1,11 @@
+---version: 0
+CREATE OR ALTER TABLE ${MY_DB}.${MY_SCHEMA}.CUSTOMERS(
+customer_id NUMBER,
+customer_name VARCHAR
+);
+
+---rollback:
+DROP TABLE IF EXISTS ${MY_DB}.${MY_SCHEMA}.CUSTOMERS;
+
+---verify:
+SELECT * FROM ${MY_DB}.${MY_SCHEMA}.CUSTOMERS LIMIT 1;
